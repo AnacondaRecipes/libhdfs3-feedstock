@@ -35,9 +35,9 @@ requirements:
     - krb5
     - libboost  {{ boost }}
     - openssl
-    - curl
+    - libcurl
   run:
-    - {{ pin_compatible('curl') }}
+    - {{ pin_compatible('libboost') }}
 
 test:
   commands:
