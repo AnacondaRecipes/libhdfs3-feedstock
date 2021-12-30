@@ -26,6 +26,8 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - git
+    - patch  # [not win]
   host:
     - libprotobuf
     - libgsasl
