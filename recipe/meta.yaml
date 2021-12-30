@@ -14,7 +14,7 @@ source:
     - 84ebda7d.patch
 
 build:
-  number: 1
+  number: 2
   # This package is a dependency of hdfs3, which is primarily used with HDFS on Linux.
   skip: True  # [not linux]
   run_exports:
@@ -41,12 +41,14 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libhdfs3.so
+    - test -f $PREFIX/lib/libhdfs3.so  # [linux]
+    - test -f $PREFIX/lib/libhdfs3.dylib  # [osx]
     - conda inspect linkages -p $PREFIX libhdfs3
 
 about:
   home: https://github.com/PivotalRD/libhdfs3
-  license: Apache 2.0
+  license: Apache-2.0
+  license_family: Apache
   summary: A Native C/C++ HDFS Client
 
 extra:
