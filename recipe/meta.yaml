@@ -23,10 +23,11 @@ build:
 
 requirements:
   build:
-    - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - cmake
     - git
+    - make
     - patch  # [not win]
   host:
     - libprotobuf
