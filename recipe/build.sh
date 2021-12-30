@@ -15,7 +15,7 @@ elif [[ ${target_platform} == linux-aarch64 ]]; then
         -DCMAKE_PREFIX_PATH=${PREFIX} \
         -DENABLE_BOOST=ON \
         -DENABLE_COVERAGE=OFF \
-        -DENABLE_SSE=OFF \
+        -DLLVM_TARGETS_TO_BUILD="X86;AArch64" \
         ../libhdfs3
 else
   ../libhdfs3/bootstrap --prefix=$PREFIX --dependency=$PREFIX
