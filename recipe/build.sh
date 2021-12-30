@@ -10,13 +10,6 @@ if [[ ${target_platform} == linux-ppc64le ]]; then
         -DENABLE_LIBCPP=OFF \
         -DENABLE_SSE=OFF \
         ../libhdfs3
-elif [[ ${target_platform} == linux-aarch64 ]]; then
-  cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-        -DCMAKE_PREFIX_PATH=${PREFIX} \
-        -DENABLE_BOOST=ON \
-        -DENABLE_COVERAGE=OFF \
-        -DLLVM_TARGETS_TO_BUILD="X86;AArch64" \
-        ../libhdfs3
 else
   ../libhdfs3/bootstrap --prefix=$PREFIX --dependency=$PREFIX
 fi
