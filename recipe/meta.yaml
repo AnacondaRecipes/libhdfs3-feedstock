@@ -48,7 +48,7 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libhdfs3.so  # [linux]
+    - test -f $PREFIX/lib/libhdfs3.so
     - conda inspect linkages -p $PREFIX libhdfs3
 
 about:
