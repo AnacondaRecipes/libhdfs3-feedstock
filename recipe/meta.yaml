@@ -23,7 +23,7 @@ build:
     # unknown.  Leaving defaults.
     - {{ pin_subpackage('libhdfs3') }}
   ignore_run_exports:
-    - libntlm  # [linux64 or aarch64]
+    - libntlm  # [linux64 or aarch64 or ppc64le]
 
 requirements:
   build:
