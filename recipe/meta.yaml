@@ -16,18 +16,20 @@ source:
 build:
   number: 2
   # This package is a dependency of hdfs3, which is primarily used with HDFS on Linux.
-  skip: True  # [not linux]
+  skip: True  # [win]
   run_exports:
     # unknown.  Leaving defaults.
     - {{ pin_subpackage('libhdfs3') }}
+  ignore_run_exports:
+    - libntlm
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - cmake
+    - cmake  >=2.8
     - git
-    - make
+    - make  # [linux]
     - patch  # [not win]
   host:
     - libprotobuf
