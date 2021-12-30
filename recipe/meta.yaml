@@ -16,20 +16,21 @@ source:
 build:
   number: 2
   # This package is a dependency of hdfs3, which is primarily used with HDFS on Linux.
+  # There isn't libboost=1.73 and libgsasl=1.8 on s390x
   skip: True  # [win or osx or s390x]
   run_exports:
     # unknown.  Leaving defaults.
     - {{ pin_subpackage('libhdfs3') }}
   ignore_run_exports:
-    - libntlm
+    - libntlm  # [linux64]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - cmake  >=2.8
+    - cmake >=2.8
     - git
-    - make  # [linux]
+    - make   # [linux]
     - patch  # [not win]
   host:
     - libprotobuf
@@ -47,7 +48,6 @@ requirements:
 test:
   commands:
     - test -f $PREFIX/lib/libhdfs3.so  # [linux]
-    - test -f $PREFIX/lib/libhdfs3.dylib  # [osx]
     - conda inspect linkages -p $PREFIX libhdfs3
 
 about:
@@ -55,6 +55,8 @@ about:
   license: Apache-2.0
   license_family: Apache
   summary: A Native C/C++ HDFS Client
+  doc_url: https://github.com/ContinuumIO/libhdfs3-downstream/blob/master/libhdfs3/README.md
+  dev_url: https://github.com/ContinuumIO/libhdfs3-downstream
 
 extra:
   recipe-maintainers:
