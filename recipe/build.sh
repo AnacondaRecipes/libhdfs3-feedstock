@@ -15,7 +15,6 @@ elif [[ ${target_platform} == linux-aarch64 ]]; then
         -DCMAKE_PREFIX_PATH=${PREFIX} \
         -DENABLE_BOOST=ON \
         -DENABLE_COVERAGE=OFF \
-        -DENABLE_LIBCPP=OFF \
         -DENABLE_SSE=OFF \
         ../libhdfs3
 else
