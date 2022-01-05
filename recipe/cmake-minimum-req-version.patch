@@ -1,0 +1,72 @@
+diff --git a/libhdfs3/CMakeLists.txt b/libhdfs3/CMakeLists.txt
+index 4694942..50fdd5f 100644
+--- a/libhdfs3/CMakeLists.txt
++++ b/libhdfs3/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.3)
+ 
+ PROJECT(libhdfs3)
+ 
+diff --git a/libhdfs3/mock/CMakeLists.txt b/libhdfs3/mock/CMakeLists.txt
+index 2d01f84..97ecae0 100644
+--- a/libhdfs3/mock/CMakeLists.txt
++++ b/libhdfs3/mock/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.3)
+ 
+ AUTO_SOURCES(files "*.cpp" "RECURSE" "${CMAKE_CURRENT_SOURCE_DIR}")
+ LIST(APPEND libhdfs3_MOCK_SOURCES ${files})
+diff --git a/libhdfs3/src/CMakeLists.txt b/libhdfs3/src/CMakeLists.txt
+index f9e2817..16059a5 100644
+--- a/libhdfs3/src/CMakeLists.txt
++++ b/libhdfs3/src/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.3)
+ 
+ SET(libhdfs3_VERSION_MAJOR 2)
+ SET(libhdfs3_VERSION_MINOR 2)
+diff --git a/libhdfs3/test/CMakeLists.txt b/libhdfs3/test/CMakeLists.txt
+index cad3885..e39e35e 100644
+--- a/libhdfs3/test/CMakeLists.txt
++++ b/libhdfs3/test/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.3)
+ 
+ SET(TEST_WORKING_DIR ${CMAKE_CURRENT_SOURCE_DIR}/data/)
+ ADD_DEFINITIONS(-DGTEST_LANG_CXX11=0 -Dprivate=public -Dprotected=public -DDATA_DIR="${TEST_WORKING_DIR}/")
+diff --git a/libhdfs3/test/function/CMakeLists.txt b/libhdfs3/test/function/CMakeLists.txt
+index d1d28c8..426a39d 100644
+--- a/libhdfs3/test/function/CMakeLists.txt
++++ b/libhdfs3/test/function/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.3)
+ 
+ AUTO_SOURCES(function_SOURCES "*.cpp" "RECURSE" "${CMAKE_CURRENT_SOURCE_DIR}")
+ 
+diff --git a/libhdfs3/test/secure/CMakeLists.txt b/libhdfs3/test/secure/CMakeLists.txt
+index 5fa5592..63bc6b0 100644
+--- a/libhdfs3/test/secure/CMakeLists.txt
++++ b/libhdfs3/test/secure/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.3)
+ 
+ AUTO_SOURCES(secure_SOURCES "*.cpp" "RECURSE" "${CMAKE_CURRENT_SOURCE_DIR}")
+ 
+diff --git a/libhdfs3/test/unit/CMakeLists.txt b/libhdfs3/test/unit/CMakeLists.txt
+index 939f5fa..7a96717 100644
+--- a/libhdfs3/test/unit/CMakeLists.txt
++++ b/libhdfs3/test/unit/CMakeLists.txt
+@@ -1,5 +1,5 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.3)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.3)
+ 
+ AUTO_SOURCES(unit_SOURCES "*.cpp" "RECURSE" ${CMAKE_CURRENT_SOURCE_DIR})
+ 
