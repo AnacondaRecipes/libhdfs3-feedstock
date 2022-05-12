@@ -1,0 +1,20 @@
+diff --git a/libhdfs3/src/client/DataReader.cpp b/libhdfs3/src/client/DataReader.cpp
+index c035c0f..30c627f 100644
+--- a/libhdfs3/src/client/DataReader.cpp
++++ b/libhdfs3/src/client/DataReader.cpp
+@@ -202,7 +202,7 @@ std::vector<char>& DataReader::readResponse(const char* text, int &outsize) {
+             }
+             int offset;
+             int pos = decrypted.find(&buf[0], 0, size);
+-            if (pos == (int)string::npos) {
++            if (pos == (int)std::string::npos) {
+                 THROW(HdfsIOException, "cannot parse wrapped datanode data response: %s",
+                   text);
+             }
+@@ -241,4 +241,4 @@ std::vector<char>& DataReader::readResponse(const char* text, int &outsize) {
+ 
+ 
+ }
+-}
+\ No newline at end of file
++}
