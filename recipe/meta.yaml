@@ -23,8 +23,6 @@ build:
   run_exports:
     # unknown.  Leaving defaults.
     - {{ pin_subpackage('libhdfs3') }}
-  ignore_run_exports:
-    - libntlm  # [linux64 or aarch64 or ppc64le]
 
 requirements:
   build:
@@ -39,7 +37,7 @@ requirements:
     - libgsasl
     - libntlm
     - libuuid
-    - libxml2  {{ libxml2 }}
+    - libxml2 2.10
     - krb5
     - libboost  {{ boost }}
     - openssl
