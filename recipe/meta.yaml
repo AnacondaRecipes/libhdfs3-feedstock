@@ -58,6 +58,7 @@ about:
   home: https://github.com/ContinuumIO/libhdfs3-downstream
   license: Apache-2.0
   license_family: Apache
+  license_file: LICENSE
   summary: A Native C/C++ HDFS Client
   doc_url: https://github.com/ContinuumIO/libhdfs3-downstream/blob/master/libhdfs3/README.md
   dev_url: https://github.com/ContinuumIO/libhdfs3-downstream
