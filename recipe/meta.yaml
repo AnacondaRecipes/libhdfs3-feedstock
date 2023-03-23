@@ -16,15 +16,13 @@ source:
     - missing-namespace-string-npos.patch
 
 build:
-  number: 3
+  number: 4
   # This package is a dependency of hdfs3, which is primarily used with HDFS on Linux.
   # There isn't libboost=1.73 and libgsasl=1.8 on s390x
   skip: True  # [win or osx or s390x]
   run_exports:
     # unknown.  Leaving defaults.
     - {{ pin_subpackage('libhdfs3') }}
-  ignore_run_exports:
-    - libntlm  # [linux64 or aarch64 or ppc64le]
 
 requirements:
   build:
@@ -39,7 +37,7 @@ requirements:
     - libgsasl
     - libntlm
     - libuuid
-    - libxml2
+    - libxml2 2.10
     - krb5
     - libboost  {{ boost }}
     - openssl
@@ -58,6 +56,7 @@ about:
   home: https://github.com/ContinuumIO/libhdfs3-downstream
   license: Apache-2.0
   license_family: Apache
+  license_file: LICENSE
   summary: A Native C/C++ HDFS Client
   doc_url: https://github.com/ContinuumIO/libhdfs3-downstream/blob/master/libhdfs3/README.md
   dev_url: https://github.com/ContinuumIO/libhdfs3-downstream
