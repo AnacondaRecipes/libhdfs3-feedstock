@@ -34,7 +34,7 @@ requirements:
     - patch  # [not win]
   host:
     - libprotobuf  # libprotobuf pins itself to x.x via run_exports
-    - libgsasl
+    - libgsasl 1.10
     - libntlm
     - libuuid
     - libxml2 2.10

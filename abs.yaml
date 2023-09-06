@@ -1,10 +1,3 @@
 # the conda-build parameters to use
 build_parameters:
   - "--suppress-variables"
-
-upload_channels:
-  - marekw
-channels:
-  - marekw
-
-upload_without_merge: True
