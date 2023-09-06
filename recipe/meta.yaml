@@ -16,7 +16,7 @@ source:
     - missing-namespace-string-npos.patch
 
 build:
-  number: 4
+  number: 5
   # This package is a dependency of hdfs3, which is primarily used with HDFS on Linux.
   # There isn't libboost=1.73 and libgsasl=1.8 on s390x
   skip: True  # [win or osx or s390x]
@@ -38,7 +38,7 @@ requirements:
     - libntlm
     - libuuid
     - libxml2 2.10
-    - krb5
+    - krb5 1.20.1
     - libboost  {{ boost }}
     - openssl
     - libcurl
