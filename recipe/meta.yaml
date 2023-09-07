@@ -37,10 +37,10 @@ requirements:
     - libgsasl 1.10 
     - libntlm
     - libuuid
-    - libxml2
+    - libxml2 {{ libxml2 }}
     - krb5 1.20.1
     - libboost  {{ boost }}
-    - openssl 
+    - openssl {{ openssl }}
     - libcurl
   run:
     - {{ pin_compatible('libboost') }}
