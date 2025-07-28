@@ -16,10 +16,9 @@ source:
     - missing-namespace-string-npos.patch
 
 build:
-  number: 6
+  number: 7
   # This package is a dependency of hdfs3, which is primarily used with HDFS on Linux.
-  # There isn't libgsasl > 1.8 on s390x
-  skip: True  # [win or osx or s390x]
+  skip: true  # [win or osx]
   run_exports:
     # unknown.  Leaving defaults.
     - {{ pin_subpackage('libhdfs3') }}
@@ -33,15 +32,15 @@ requirements:
     - make   # [linux]
     - patch  # [not win]
   host:
-    - libprotobuf  # libprotobuf pins itself to x.x via run_exports
-    - libgsasl 1.10
-    - libntlm
-    - libuuid
+    - libprotobuf  {{ libprotobuf }}  # libprotobuf pins itself to x.x via run_exports
+    - libgsasl {{ libgsasl }}
+    - libntlm {{ libntlm }}
+    - libuuid {{ libuuid }}
     - libxml2 {{ libxml2 }}
-    - krb5 1.20.1
+    - libkrb5 {{ krb5 }}
     - libboost  {{ boost }}
     - openssl {{ openssl }}
-    - libcurl
+    - libcurl {{ libcurl }}
   run:
     - {{ pin_compatible('libboost') }}
 
