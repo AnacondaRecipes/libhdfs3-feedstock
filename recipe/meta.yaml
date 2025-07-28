@@ -47,7 +47,24 @@ requirements:
 
 test:
   commands:
+    # Test header files
+    - test -f $PREFIX/include/hdfs/BlockLocation.h
+    - test -f $PREFIX/include/hdfs/DirectoryIterator.h
+    - test -f $PREFIX/include/hdfs/Exception.h
+    - test -f $PREFIX/include/hdfs/FileStatus.h
+    - test -f $PREFIX/include/hdfs/FileSystem.h
+    - test -f $PREFIX/include/hdfs/FileSystemStats.h
+    - test -f $PREFIX/include/hdfs/InputStream.h
+    - test -f $PREFIX/include/hdfs/OutputStream.h
+    - test -f $PREFIX/include/hdfs/Permission.h
+    - test -f $PREFIX/include/hdfs/XmlConfig.h
+    - test -f $PREFIX/include/hdfs/hdfs.h
+    # Test library files
     - test -f $PREFIX/lib/libhdfs3.so
+    - test -f $PREFIX/lib/libhdfs3.so.1
+    - test -f $PREFIX/lib/libhdfs3.so.2.2.31
+    - test -f $PREFIX/lib/pkgconfig/libhdfs3.pc
+    # Test linkages
     - conda inspect linkages -p $PREFIX libhdfs3
 
 about:
