@@ -1,7 +1,5 @@
 {% set name = "libhdfs3" %}
 {% set version = "2.3.0" %}
-# commit for 2.3.0 tag
-{% set commit = "dc504af4a2445e9db836d3af9781ccc76c3856f2" %}
 
 package:
   name: {{ name }}
@@ -9,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/ContinuumIO/{{ name }}-downstream.git
-  git_tag: {{ commit }}
+  git_tag: dc504af4a2445e9db836d3af9781ccc76c3856f2
   patches:
     - CMakeLists.txt.diff
     - 84ebda7d.patch
@@ -19,7 +17,7 @@ source:
 build:
   number: 8
   # This package is a dependency of hdfs3, which is primarily used with HDFS on Linux.
-  skip: true  # [win or osx]
+  skip: true  # [not linux]
   run_exports:
     # unknown.  Leaving defaults.
     - {{ pin_subpackage(name) }}
@@ -31,7 +29,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake >=3.3
     - git
-    - make   # [linux]
+    - make
   host:
     - libprotobuf  {{ libprotobuf }}  # libprotobuf pins itself to x.x via run_exports
     - libgsasl {{ libgsasl }}
