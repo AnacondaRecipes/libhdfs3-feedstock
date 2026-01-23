@@ -36,8 +36,8 @@ requirements:
     - libntlm {{ libntlm }}
     - libuuid {{ libuuid }}
     - libxml2 {{ libxml2 }}
-    - libkrb5 {{ krb5 }}
-    - libboost  {{ boost }}
+    - libkrb5 {{ libkrb5 }}
+    - libboost  {{ libboost }}
     - openssl {{ openssl }}
     - libcurl {{ libcurl }}
   run:
